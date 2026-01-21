@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "hetman-kit-localize"
-version = "1.0.0"
+version = "1.0.1"
 description = "Hetman Kit Localize provides thread-safe locale management using context variables. It enables concurrent execution with different locale settings per context."
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.12"

@@ -99,3 +99,27 @@ class Localize:
             base_locale: The base locale string to set (e.g., 'en_US', 'pl_PL').
         """
         cls._base_locale = base_locale
+
+    @staticmethod
+    def sync_locale(locale: str, *localize: type["Localize"]) -> None:
+        """
+        Synchronizes the current locale across multiple Localize instances.
+
+        Args:
+            locale (str): The locale string to be set (e.g., 'en_US').
+            *localize (type[Localize]): One or more Localize objects to synchronize.
+        """
+        for cls in localize:
+            cls.set_locale(locale=locale)
+
+    @staticmethod
+    def sync_base_locale(base_locale: str, *localize: type["Localize"]) -> None:
+        """
+        Synchronizes the base (default) locale across multiple Localize instances.
+
+        Args:
+            base_locale (str): The base locale string to be set.
+            *localize (type[Localize]): One or more Localize objects to synchronize.
+        """
+        for cls in localize:
+            cls.set_base_locale(base_locale=base_locale)
